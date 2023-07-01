@@ -191,6 +191,11 @@ function mortgagePayments(months, loanAmount, annualInterestRate) {
             console.log(`Досрочное погашение: ${myVars.accumulation}`)
             console.log(`Остаток credit_tax:  ${myVars.creditTaxDeduction}`)
             console.log(`Остаток percents_tax: ${myVars.percentsTaxDeduction}`)
+            fillMortgageTable('Сумма досрочного погашения', 'Текущая зарплата', 'Текущие расходы',
+                              'Остаток налогового вычета на тело ипотеки',
+                              'Остаток налогового вычета на проценты по ипотеке', 'red', true)
+            fillMortgageTable(myVars.accumulation, myVars.salary, myVars.monthlyExpenses, myVars.creditTaxDeduction,
+                              myVars.percentsTaxDeduction, 'red', false)
             remainingLoanBalance -= myVars.accumulation
             if (remainingLoanBalance >= 0) {
                 myVars.accumulation = 0
@@ -226,7 +231,7 @@ function mortgagePayments(months, loanAmount, annualInterestRate) {
         }
         roundMyVars()
         // Выводим результаты для текущего месяца
-        fillMortgageTable(month, monthlyPayment, loanPayment, interestPayment, remainingLoanBalance)
+        fillMortgageTable(month, monthlyPayment, loanPayment, interestPayment, remainingLoanBalance, 'white', false)
         console.log(`${month}    ${monthlyPayment}    ${loanPayment}    ${interestPayment}    ${remainingLoanBalance}`)
     }
     console.log('------------------------------------------------------------')

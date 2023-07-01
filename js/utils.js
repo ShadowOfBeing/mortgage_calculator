@@ -2,36 +2,7 @@ function round(number, n) {
     return Math.floor(number * 10 ** n) / 10 ** n
 }
 
-function createTable() {
-    var table = document.getElementById('table-for-data')
-    table.innerHTML = "<tbody></tbody>"
-    var theme = document.getElementById('column1').children[0].children[0].classList[1]
-    var length = Object.keys(dictForTitle[theme]).length
-    window.row_count = length
-    for (i = 0; i < length; i++) {
-        var tr = document.createElement("tr")
-        var td1 = document.createElement("td")
-        var td2 = document.createElement("td")
-        var td3 = document.createElement("td")
-        td1.setAttribute('id', `r${i + 1}c1`)
-        td2.setAttribute('id', `r${i + 1}c2`)
-        td3.setAttribute('id', `r${i + 1}c3`)
-        td1.setAttribute('class', 'can_be_closed')
-        td2.setAttribute('class', 'can_be_closed')
-        td3.setAttribute('class', 'can_be_closed')
-        td1.innerHTML = dictForTitle[theme][i]
-        td2.innerHTML = ''
-        td3.innerHTML = ''
-        tr.appendChild(td1)
-        tr.appendChild(td2)
-        tr.appendChild(td3)
-        table.appendChild(tr)
-    }
-    fillFunctionTableLang(document.getElementById('column2').children[0].children[0].classList[1], length, 2)
-    fillFunctionTableLang(document.getElementById('column3').children[0].children[0].classList[1], length, 3)
-}
-
-function fillMortgageTable(month, monthlyPayment, loanPayment, interestPayment, remainingLoanBalance) {
+function fillMortgageTable(column1, column2, column3, column4, column5, color, isString) {
     var table = document.getElementById('mortgage-table')
     var tr = document.createElement("tr")
     var td1 = document.createElement("td")
@@ -39,11 +10,18 @@ function fillMortgageTable(month, monthlyPayment, loanPayment, interestPayment, 
     var td3 = document.createElement("td")
     var td4 = document.createElement("td")
     var td5 = document.createElement("td")
-    td1.innerHTML = round(month, 2)
-    td2.innerHTML = round(monthlyPayment, 2)
-    td3.innerHTML = round(loanPayment, 2)
-    td4.innerHTML = round(interestPayment, 2)
-    td5.innerHTML = round(remainingLoanBalance, 2)
+    td1.innerHTML = isString ? column1 : round(column1, 2)
+    td2.innerHTML = isString ? column2 : round(column2, 2)
+    td3.innerHTML = isString ? column3 : round(column3, 2)
+    td4.innerHTML = isString ? column4 : round(column4, 2)
+    td5.innerHTML = isString ? column5 : round(column5, 2)
+    if (color == 'red') {
+        td1.style.backgroundColor = 'red'
+        td2.style.backgroundColor = 'red'
+        td3.style.backgroundColor = 'red'
+        td4.style.backgroundColor = 'red'
+        td5.style.backgroundColor = 'red'
+    }
     tr.appendChild(td1)
     tr.appendChild(td2)
     tr.appendChild(td3)
