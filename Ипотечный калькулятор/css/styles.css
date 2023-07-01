@@ -1,0 +1,194 @@
+.main-container {
+    display: flex;
+    height: 98vh;
+}
+
+.rubrics-menu {
+    width: 25vw;
+}
+
+.content-box {
+    display: flex;
+    margin: 0 2vw auto;
+}
+
+.main-page-content {
+    width: 80.5vw;
+    overflow: auto;
+    border: 2px solid red;
+    padding: 0 10px 10px;
+    font-size: 2vw;
+    margin-left: 10px;
+}
+
+.questions-menu {
+    width: 25vw;
+    max-height: 86.7vh;
+}
+
+.questions-container {
+    border: 2px solid red;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.answer-and-question {
+    width: 45vw;
+    height: 88.7vh;
+    margin-left: 2vw;
+}
+
+.answer, .question {
+    border: 2px solid red;
+    font-size: 1.87vw;
+    padding: 10px;
+    overflow: auto;
+    word-break: break-word;
+}
+
+.answer {
+    max-height: 58.7vh;
+}
+
+.main-title {
+    font-size: 1.67vw;
+    width: 90%;
+    border: 2px solid red;
+    margin: 5px;
+    padding: 8px;
+    transition: 0.2s;
+}
+
+.title {
+    font-size: 50px;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.main-title:hover {
+    cursor: pointer;
+    margin-left: 20px;
+    transition: 0.2s;
+    color: white;
+    background-color: red;
+}
+
+.select {
+    margin-left: 20px;
+    color: white;
+    background-color: red;
+}
+
+.question-in-menu {
+    font-size: 2vw;
+    padding: 10px;
+    border: 1px solid white;
+    margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.question-in-menu:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+    background-color: red;
+}
+
+.last-question {
+    margin-bottom: 0;
+}
+
+/* кастомный скролл */
+.main-page-content::-webkit-scrollbar,
+.questions-container::-webkit-scrollbar,
+.question::-webkit-scrollbar,
+.answer::-webkit-scrollbar {
+    width: 10px;
+}
+
+.main-page-content::-webkit-scrollbar-track,
+.questions-container::-webkit-scrollbar-track,
+.question::-webkit-scrollbar-track,
+.answer::-webkit-scrollbar-track {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.main-page-content::-webkit-scrollbar-thumb,
+.questions-container::-webkit-scrollbar-thumb,
+.question::-webkit-scrollbar-thumb,
+.answer::-webkit-scrollbar-thumb {
+    background-color: rgba(256, 0, 0, 0.5);
+}
+
+.main-page-content,
+.questions-container,
+.question,
+.answer {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(256, 0, 0, 0.5);
+}
+
+.calc-btn {
+
+}
+
+.title-table-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    background-color: red;
+}
+
+.title-table-div {
+    flex-basis: 20%;
+    font-size: 0.5em;
+    text-align: center;
+    padding: 7px;
+}
+
+.option {
+    margin-bottom: 10px;
+    width: 22vw;
+    font-size: 0.9em;
+}
+
+.option-title {
+    position: relative;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.question {
+    position: absolute;
+    font-size: 1.1em;
+    left: 20vw;
+    top: -0.75vh;
+    padding: 1px 8px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+#mortgage-table {
+    margin: 10px auto auto auto;
+    font-size: 20px;
+    empty-cells: hide;
+    table-layout: fixed;
+}
+
+#mortgage-table td {
+    border: 1px solid black;
+    width: 25vw;
+    padding: 10px;
+    white-space: pre-line;
+    word-wrap: break-word;
+    word-break: break-word;
+}
