@@ -133,8 +133,8 @@ a {
     scrollbar-color: rgba(256, 0, 0, 0.5);
 }
 
-.calc-btn {
-
+.calc-btn:hover {
+    cursor: pointer;
 }
 
 .title-table-wrapper {
