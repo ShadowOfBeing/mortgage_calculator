@@ -177,6 +177,11 @@ a {
     font-weight: bold;
 }
 
+.question:hover {
+    background-color: #e60000;
+    border: 2px solid #e60000;
+}
+
 #mortgage-table {
     margin: 10px auto auto auto;
     font-size: 20px;
