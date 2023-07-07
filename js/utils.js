@@ -48,3 +48,27 @@ function startPage() {
         document.getElementById(key).previousSibling.previousSibling.children[0].title = hints[key]
     }
 }
+
+function toggle(target) {
+    var targetElement = document.getElementsByClassName(`${target}OptionsWrapper`)[0]
+    var openElement = document.getElementsByClassName('open')[0]
+
+    if (targetElement.classList.contains('open')) {
+        var option = 'del'
+    } else {
+        var option = 'add'
+    }
+
+    if (openElement) {
+        openElement.classList.remove('open')
+        openElement.previousElementSibling.firstElementChild.classList.replace('arrow-up', 'arrow-down')
+    }
+
+    if (option == 'del') {
+        targetElement.classList.remove('open')
+        targetElement.previousElementSibling.firstElementChild.classList.replace('arrow-up', 'arrow-down')
+    } else {
+        targetElement.classList.add('open')
+        targetElement.previousElementSibling.firstElementChild.classList.replace('arrow-down', 'arrow-up')
+    }
+}

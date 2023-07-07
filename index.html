@@ -11,46 +11,59 @@
     <div class="main-container">
         <div class="rubrics-menu">
             <div class="title">Опции</div>
+            <div id="mortgageOptions">
+                <div class="optionsTitle" onclick="toggle('mortgage')">
+                    Опции ипотеки
+                    <div class="arrow-down"></div>
+                </div>
+                <div class="mortgageOptionsWrapper">
+                    <div class="option-title">Цена квартиры</div>
+                    <input class="option" id="apartment-price" type="text" size="40" value="9000000">
 
-            <div class="option-title">Цена квартиры</div>
-            <input class="option" id="apartment-price" type="text" size="40" value="9000000">
+                    <div class="option-title">Первоначальный взнос за ипотеку</div>
+                    <input class="option" id="mortgage-down-payment" type="text" size="40" value="1500000">
 
-            <div class="option-title">Первоначальный взнос за ипотеку</div>
-            <input class="option" id="mortgage-down-payment" type="text" size="40" value="1500000">
+                    <div class="option-title">Срок ипотеки (мес)</div>
+                    <input class="option" id="mortgage-period" type="text" size="40" value="180">
 
-            <div class="option-title">Срок ипотеки (мес)</div>
-            <input class="option" id="mortgage-period" type="text" size="40" value="180">
+                    <div class="option-title">Ипотечный процент</div>
+                    <input class="option" id="mortgage-percent" type="text" size="40" value="9">
 
-            <div class="option-title">Ипотечный процент</div>
-            <input class="option" id="mortgage-percent" type="text" size="40" value="9">
+                    <div class="option-title">Налоговый вычет за тело ипотеки<div class="question">?</div></div>
+                    <input class="option" id="credit-tax-deduction" type="text" size="40" value="260000">
 
-            <div class="option-title">Налоговый вычет за тело ипотеки<div class="question">?</div></div>
-            <input class="option" id="credit-tax-deduction" type="text" size="40" value="260000">
+                    <div class="option-title">Налоговый вычет за проценты по ипотеке<div class="question">?</div></div>
+                    <input class="option" id="percents-tax-deduction" type="text" size="40" value="390000">
+                </div>
+            </div>
+            <div id="accumulationOptions">
+                <div class="optionsTitle" onclick="toggle('accumulation')">
+                    Доходы и расходы
+                    <div class="arrow-down"></div>
+                </div>
+                <div class="accumulationOptionsWrapper">
+                    <div class="option-title">Размер зарплаты</div>
+                    <input class="option" id="salary" type="text" size="40" value="150000">
 
-            <div class="option-title">Налоговый вычет за проценты по ипотеке<div class="question">?</div></div>
-            <input class="option" id="percents-tax-deduction" type="text" size="40" value="390000">
+                    <div class="option-title">Период роста зарплаты (мес)<div class="question">?</div></div>
+                    <input class="option" id="rise-period" type="text" size="40" value="6">
 
-            <div class="option-title">Размер зарплаты</div>
-            <input class="option" id="salary" type="text" size="40" value="150000">
+                    <div class="option-title">Сумма роста зарплаты</div>
+                    <input class="option" id="rise-amount" type="text" size="40" value="15000">
 
-            <div class="option-title">Период роста зарплаты (мес)<div class="question">?</div></div>
-            <input class="option" id="rise-period" type="text" size="40" value="6">
+                    <div class="option-title" id="q1">Ежемесячные расходы<div class="question">?</div></div>
+                    <input class="option" id="monthly-expenses" type="text" size="40" value="25000">
 
-            <div class="option-title">Сумма роста зарплаты</div>
-            <input class="option" id="rise-amount" type="text" size="40" value="15000">
+                    <div class="option-title">Период роста ежемесячных расходов (мес)<div class="question">?</div></div>
+                    <input class="option" id="monthly-expenses-rise-period" type="text" size="40" value="12">
 
-            <div class="option-title" id="q1">Ежемесячные расходы<div class="question">?</div></div>
-            <input class="option" id="monthly-expenses" type="text" size="40" value="25000">
+                    <div class="option-title">Сумма роста ежемесячных расходов</div>
+                    <input class="option" id="monthly-expenses-rise" type="text" size="40" value="5000">
 
-            <div class="option-title">Период роста ежемесячных расходов (мес)<div class="question">?</div></div>
-            <input class="option" id="monthly-expenses-rise-period" type="text" size="40" value="12">
-
-            <div class="option-title">Сумма роста ежемесячных расходов</div>
-            <input class="option" id="monthly-expenses-rise" type="text" size="40" value="5000">
-
-            <div class="option-title">Процент накопительного вклада<div class="question">?</div></div>
-            <input class="option" id="accumulative-interest" type="text" size="40" value="8">
-
+                    <div class="option-title">Процент накопительного вклада<div class="question">?</div></div>
+                    <input class="option" id="accumulative-interest" type="text" size="40" value="8">
+                </div>
+            </div>
 <!--            <div class="option-title">Сумма накоплений</div>-->
 <!--            <input class="option" id="accumulation" type="text" size="40" value="0">-->
 
@@ -65,16 +78,6 @@
                 <div class="title-table-div">Остаток тела кредита</div>
             </div>
             <table id="mortgage-table">
-<!--                <thead>-->
-<!--                    <tr>-->
-<!--                        <th>Месяц</th>-->
-<!--                        <th>Сумма ежемесячного платежа</th>-->
-<!--                        <th>Выплата тела кредита</th>-->
-<!--                        <th>Выплата процентов</th>-->
-<!--                        <th>Остаток тела кредита</th>-->
-<!--                    </tr>-->
-<!--                </thead>-->
-                <tbody></tbody>
             </table>
         </div>
     </div>

@@ -4,7 +4,7 @@
 }
 
 .rubrics-menu {
-    width: 25vw;
+    width: 27vw;
 }
 
 .content-box {
@@ -133,7 +133,22 @@ a {
     scrollbar-color: rgba(256, 0, 0, 0.5);
 }
 
+.calc-btn {
+    background-color: red; /* Цвет фона */
+    border: none; /* Без границы */
+    color: white; /* Цвет шрифта */
+    padding: 12px 24px; /* Отступы */
+    text-align: center; /* Выравнивание текста */
+    text-decoration: none; /* Без подчеркивания */
+    display: inline-block;
+    font-size: 1.1vw; /* Размер шрифта */
+    margin: 4px 2px; /* Отступы */
+    cursor: pointer; /* Изменить тип курсора */
+    border-radius: 10px; /* Радиус края */
+}
+
 .calc-btn:hover {
+    background-color: #e60000;
     cursor: pointer;
 }
 
@@ -154,15 +169,21 @@ a {
 }
 
 .option {
-    margin-bottom: 10px;
+    margin: 0 10px 20px;
     width: 22vw;
-    font-size: 0.9em;
+    font-size: 0.7vw;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .option-title {
     position: relative;
-    font-size: 1.2em;
-    margin-bottom: 5px;
+    font-size: 1vw;
+    margin-left: 0.6vw;
+    margin-bottom: 0px;
+    color: black;
 }
 
 .question {
@@ -171,7 +192,7 @@ a {
     left: 20vw;
     top: -0.75vh;
     padding: 1px 8px;
-    border-radius: 50%;
+    border-radius: 100%;
     background-color: red;
     color: white;
     font-weight: bold;
@@ -182,6 +203,61 @@ a {
     border: 2px solid #e60000;
 }
 
+/**/
+#mortgageOptions,
+#accumulationOptions {
+    background-color: red;
+    font-size: 1.3vw;
+    color: white;
+    border: 2px solid red;
+    border-radius: 10px;
+    margin-bottom: 2vh;
+}
+
+#mortgageOptions:hover,
+#accumulationOptions:hover {
+    background-color: #e60000;
+    cursor: pointer;
+}
+
+.arrow-up {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 88%;
+    border: 15px solid transparent;
+    border-top-color: #fff;
+    transform: rotate(180deg);
+}
+
+.arrow-down {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 88%;
+    border: 15px solid transparent;
+    border-top-color: #fff;
+}
+
+.optionsTitle {
+    position: relative;
+    padding: 0.7vh;
+    padding-left: 1vw;
+}
+
+.mortgageOptionsWrapper,
+.accumulationOptionsWrapper {
+    display: none;
+    background-color: white;
+    margin: 2px;
+    border-radius: 7px;
+}
+
+.open {
+    display: block;
+}
+
+/* таблица с рассчётами */
 #mortgage-table {
     margin: 10px auto auto auto;
     font-size: 20px;

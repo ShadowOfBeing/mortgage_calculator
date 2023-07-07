@@ -29,7 +29,7 @@ class MyVariables {
     // сумма роста ежемесячных расходов
     this.monthlyExpensesRise = 0;
     // период роста ежемесячных расходов
-    this.monthlyExpensesRisePeriod = 12;
+    this.monthlyExpensesRisePeriod = 0;
     // размер зарплаты
     this.salary = 0;
     // стаж работы
@@ -63,6 +63,15 @@ class MyVariables {
     // сумма выплаченных процентов за год
     this.percentsFromYear = 0;
   }
+
+    reset() {
+        for (const item in this) {
+            if (this.hasOwnProperty(item)) {
+                this[item] = 0
+            }
+        }
+        this.prepaymentPeriod = 12
+    }
 }
 
 const myVars = new MyVariables()
@@ -170,6 +179,15 @@ function mortgagePayments(months, loanAmount, annualInterestRate) {
         // перерасчитываем зарплату, расходы и накопления
         calcAccumulation(1, monthlyPayment)
 
+        if (myVars.accumulation >= remainingLoanBalance) {
+            fillMortgageTable('Сумма досрочного погашения', 'Текущая зарплата', 'Текущие расходы',
+                  'Остаток налогового вычета на тело ипотеки',
+                  'Остаток налогового вычета на проценты по ипотеке', 'red', true)
+            fillMortgageTable(myVars.accumulation, myVars.salary, myVars.monthlyExpenses, myVars.creditTaxDeduction,
+                              myVars.percentsTaxDeduction, 'red', false)
+            break
+        }
+
         // Рассчитываем сумму выплаты по процентам
         var interestPayment = remainingLoanBalance * monthlyInterestRate
 
@@ -240,9 +258,12 @@ function mortgagePayments(months, loanAmount, annualInterestRate) {
     console.log(`Сумма:        ${loanAmount + percents}`)
     console.log(`Зарплата:     ${myVars.salary}`)
     console.log(`Накопления:   ${myVars.accumulation}`)
+    // сбрасываем все переменные
+    myVars.reset()
 }
 
 function viewResult() {
+    document.getElementById('mortgage-table').innerHTML = ''
     myVars.apartmentPrice = parseInt(document.getElementById('apartment-price').value)
     myVars.mortgagePercent = parseInt(document.getElementById('mortgage-percent').value)
     myVars.monthlyExpenses = parseInt(document.getElementById('monthly-expenses').value)
