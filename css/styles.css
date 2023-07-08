@@ -168,24 +168,26 @@ a {
     padding: 7px;
 }
 
+.option-title {
+    position: relative;
+    font-size: 1vw;
+    margin-left: 0.65vw;
+    margin-bottom: 0px;
+    color: black;
+}
+
 .option {
-    margin: 0 10px 20px;
+    margin: 0 0.6vw 2vh;
     width: 22vw;
     font-size: 0.7vw;
     padding: 5px;
+    padding-left: 1vw;
     border: none;
     border-radius: 10px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.option-title {
-    position: relative;
-    font-size: 1vw;
-    margin-left: 0.6vw;
-    margin-bottom: 0px;
-    color: black;
-}
-
+/* знак вопроса с подсказкой */
 .question {
     position: absolute;
     font-size: 1.1em;
